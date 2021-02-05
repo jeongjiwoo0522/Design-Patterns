@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{06d5a869-3f65-4bd6-9831-e46bb4861358}</ProjectGuid>
-    <RootNamespace>abstract_factory</RootNamespace>
+    <ProjectGuid>{232085ba-a960-4917-bf6f-a7fefa43406c}</ProjectGuid>
+    <RootNamespace>builder</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,10 +139,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\creational_pattern\creational_pattern.h" />
-    <ClInclude Include="abstract_factory.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
