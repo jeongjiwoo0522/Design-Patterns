@@ -28,3 +28,18 @@ protected:
 	Direction CommonWall(Room*, Room*);
 	Maze* _currentMaze;
 };
+
+class CountingMazeBuilder : public MazeBuilder {
+public:
+	CountingMazeBuilder();
+
+	virtual void BuildMaze();
+	virtual void BuildRoom(int);
+	virtual void BuildDoor(int, int);
+
+	void GetCounts(int&, int&) const;
+
+private:
+	int _doors;
+	int _rooms;
+};
