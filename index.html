@@ -6,10 +6,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DesignPatterns</title>
   <style>
-    img {
-      border: 3px solid black;
-      border-radius: 20px;
-      padding: 10px;
+    .box {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+    }
+    .box1 {
+      background-color: yellowgreen;
+    }
+    .box1:hover {
+      border: 5px solid yellowgreen;
+      background-color: white;
+    }
+    .box2 {
+      width: 0;
+      height: 0;
+      border-left: 40px solid transparent;
+      border-right: 40px solid transparent;
+      border-bottom: 80px solid red;
+    }
+    .box2:hover {
+      border-bottom: 150px solid red;
+    }
+    .box3 {
+      background-color: blue;
+      border-radius: 50%;
+    }
+    .box3:hover {
+      border: 20px solid skyblue;
     }
   </style>
 </head>
@@ -18,5 +42,31 @@
   <img src="./structure/abstract_factory.svg">
   <h1>BUILDER</h1>
   <img src="./structure/builder.svg">
+  <!--offsetHeight-->
+  <div class="box box1"></div>
+  <div class="box box2"></div>
+  <div class="box box3"></div>
+  <script>
+    const box1 = document.querySelector(".box1");
+    const box2 = document.querySelector(".box2");
+    const box3 = document.querySelector(".box3");
+    const body = document.querySelector("body");
+    box1.style.top = "20px";
+    box1.style.right = "180px";
+    box2.style.top = "20px";
+    box2.style.right = "310px";
+    box3.style.top = "20px";
+    box3.style.right = "440px";
+    const movePosition = () => {
+      let x = 20; let increase = true;
+      return () => { if(x<20) increase = true; if(x === 300) increase = false; return increase ? x++ : x--; }
+    }
+    const move1 = movePosition();
+    const move2 = movePosition();
+    const move3 = movePosition();
+    setInterval(() => box1.style.top = `${move1()}px`, 7);
+    setInterval(() => box2.style.top = `${move2()}px`, 1);
+    setInterval(() => box3.style.top = `${move3()}px`, 10);
+  </script>
 </body>
 </html>
