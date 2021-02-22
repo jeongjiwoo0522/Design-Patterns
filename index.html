@@ -49,26 +49,17 @@
   <div class="box box2"></div>
   <div class="box box3"></div>
   <script>
-    const box1 = document.querySelector(".box1");
-    const box2 = document.querySelector(".box2");
-    const box3 = document.querySelector(".box3");
+    const box1 = document.querySelector(".box1"); box1.style.top = "20px"; box1.style.right = "180px";
+    const box2 = document.querySelector(".box2"); box2.style.top = "20px"; box2.style.right = "310px";
+    const box3 = document.querySelector(".box3"); box3.style.top = "20px"; box3.style.right = "440px";
     const body = document.querySelector("body");
-    box1.style.top = "20px";
-    box1.style.right = "180px";
-    box2.style.top = "20px";
-    box2.style.right = "310px";
-    box3.style.top = "20px";
-    box3.style.right = "440px";
     const movePosition = () => {
       let x = 20; let increase = true;
       return () => { if(x<20) increase = true; if(x === 300) increase = false; return increase ? x++ : x--; }
     }
-    const move1 = movePosition();
-    const move2 = movePosition();
-    const move3 = movePosition();
-    setInterval(() => box1.style.top = `${move1()}px`, 7);
-    setInterval(() => box2.style.top = `${move2()}px`, 1);
-    setInterval(() => box3.style.top = `${move3()}px`, 10);
+    const move1 = movePosition(); setInterval(() => box1.style.top = `${move1()}px`, 7);
+    const move2 = movePosition(); setInterval(() => box2.style.top = `${move2()}px`, 1);
+    const move3 = movePosition(); setInterval(() => box3.style.top = `${move3()}px`, 10);
   </script>
 </body>
 </html>
