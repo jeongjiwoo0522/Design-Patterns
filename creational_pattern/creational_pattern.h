@@ -47,3 +47,20 @@ public:
 	void AddRoom(Room*);
 	Room* RoomNo(int) const;
 };
+
+class Spell {};
+class EnchantedRoom : public Room {
+public:
+	EnchantedRoom(int n, Spell* spell);
+};
+
+class BombedWall : public Wall {};
+class RoomWithABomb : public Room {
+public:
+	RoomWithABomb(int n);
+};
+
+class DoorNeedingSpell : public Door {
+public:
+	DoorNeedingSpell(Room*, Room*);
+};

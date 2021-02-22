@@ -18,15 +18,6 @@ public:
 	}
 };
 
-class Spell {};
-class EnchantedRoom : public Room { 
-public: 
-	EnchantedRoom(int n, Spell* spell); 
-};
-class DoorNeedingSpell : public Door {
-public:
-	DoorNeedingSpell(Room*, Room*);
-};
 class EnchantedMazeFactory : public MazeFactory {
 public:
 	EnchantedMazeFactory();
@@ -40,11 +31,6 @@ protected:
 	Spell* CastSpell() const;
 };
 
-class BombedWall : public Wall {};
-class RoomWithABomb : public Room {
-public:
-	RoomWithABomb(int n);
-};
 class BombedMazeFactory : public MazeFactory {
 public:
 	Wall* MakeWall() const {
