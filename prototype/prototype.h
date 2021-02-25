@@ -31,6 +31,14 @@ private:
 	Room* _room2;
 };
 
+class Wall : public MapSite {
+public:
+	Wall();
+	Wall(const Wall&);
+
+	virtual Wall* Clone() const;
+};
+
 class BombedWall : public Wall {
 public:
 	BombedWall();

@@ -9,6 +9,20 @@ MazePrototypeFactory::MazePrototypeFactory(
 	_prototypeDoor = d;
 }
 
+Wall* MazePrototypeFactory::MakeWall() const {
+	return _prototypeWall->Clone();
+}
+
+Door* MazePrototypeFactory::MakeDoor(Room* r1, Room* r2) const {
+	Door* door = _prototypeDoor->Clone();
+	door->Initialize(r1, r2);
+	return door;
+}
+
+Wall* Wall::Clone() const {
+	return new Wall(*this);
+}
+
 Door::Door(const Door& other) {
 	_room1 = other._room1;
 	_room1 = other._room2;
@@ -24,5 +38,9 @@ Door* Door::Clone() const {
 }
 
 BombedWall::BombedWall(const BombedWall& other) : Wall(other) {
+	_bomb = other._bomb;
+}
 
+Wall* BombedWall::Clone() const {
+	return new BombedWall();
 }
